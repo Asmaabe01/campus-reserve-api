@@ -1,5 +1,7 @@
-import random
+
+import secrets
 
 
-def generate_verification_code():
-    return str(random.randint(100000, 999999))  
+def generate_verification_code() -> str:
+    """Generate a cryptographically secure six-digit code."""
+    return str(secrets.randbelow(900_000) + 100_000)
